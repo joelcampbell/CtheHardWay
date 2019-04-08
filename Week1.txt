@@ -1,0 +1,164 @@
+// Prints "hello, world" repeatedly forever
+//printf is included in the stdio.h library
+while (true)
+{
+	printf("hello, world\n");
+}
+
+// Prints "hello, world" 50 times
+for (int i = 0; i < 50; i++)
+{
+	printf("hello, world"\n");
+}
+
+// A function that gets user input and returns a value
+// defines a variable called answer and defines it as a string
+// printf requires an explicit assignment of a string w/%s
+//string is included in the cs50.h library
+string answer = get_string("What's your name?\n");
+printf("%s", answer);
+
+// Adds some more language to the printf
+string answer = get_string("What's your name?\n");
+printf("hello, %s", answer);
+
+//Notes for compiling program
+//The following will compile hello.c text file as hello executable
+// -o is an output argument
+// the file can be run as ./hello
+// $ clang -o hello hello.c
+
+//alternative to above you could just use. Make is a programme that uses clang compiler
+// $ make hello
+
+//// Example program that receives name as input and outputs w/hello
+// "int main (void)" pretty much means do this when green flag clicked
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+	string name = get_string("What is your name?\n");
+	printf("hello, %s\n", name);
+}
+
+//
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+	int i = get_int("Integer: ");
+	printf("hello, %i\n", i);
+}
+
+// <stdio.h> is a library otherwise known as a header file
+
+////example code demonstrating floating point
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+	float f = get_float("float: ");
+	printf("hello, %f\n, f);
+}
+
+//// Example code of how to do arithmetic
+//// If using 2 and 10 for x and y int won't divide as not floating point
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+	// Prompt user for x
+	int x = get_int("x: ");
+	
+	// Prompt user for y
+	int y = get_int("y: ");
+	
+	// Perform arithmetic
+	printf("x + y = %i\n", x + y);
+	printf("x - y = %i\n", x - y);
+	printf("x * y = %i\n", x * y);
+	printf("x / y = %i\n", x / y);
+	printf("x mod y = %i\n", x % y);
+}
+
+// Example of floating point division
+//the ".50" in the % assignment indicates five decimal places
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+	// Prompt user for x
+	float x = get_float("x: ");
+	
+	// Prompt user for y
+	float y = get_float("y: ");
+	
+	// Perform division
+	printf("x / y = %.50f\n", x / y);
+}
+
+//When using floating point precision will be affected
+//by the amount of memory in the computer.
+//e.g. 2/10 = .20000055323410
+//float takes up 32 bits or 4 bytes
+//double takes up 64 bits or 8 bytes
+//this pushes the precision up but still not precise
+
+//Parity example for when to use remainder
+
+// Prompt user for integer
+int n = get_int("n: ");
+
+// Check parity of integer
+if (n % 2 == 0)
+{
+	printf("even\n");
+}
+else
+{
+	printf("odd\n");
+	}
+}
+
+//Another example for test for conditions and use if else if
+
+
+// Prompt user for x
+int x = get_int("x: ");
+
+// Prompt user for y
+int y = get_int("y: ");
+
+// Compare x and y
+if (x < y)
+{	printf("x is less than y\n");
+}
+else if (x > y)
+{
+	printf("x is greater than y\n");
+}
+else
+	printf("x is equal to y\n");
+}
+
+//There is also a character
+// || means "or"
+
+// Prompt user for answer
+char c = get_char("Answer: ");
+
+//check answer
+if (c == 'Y' || c == 'y')
+{
+	printf("Yes\n");
+}
+else if (c == 'N' || c == 'n')
+{
+	printf("no\n");
+}
+
